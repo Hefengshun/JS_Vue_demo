@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <div id="app">
+        测试双向绑定demo
+        <input type="text" v-model="text" /> {{text}}
+    </div>
+</body>
+<script type="text/javascript">
+
+    //  Vue构造函数     
+    //   观察data中的所有属性值，注意增添了observe
+    function Vue(options) {
+        this.data = options.data;
+        // 让观察者对data数据进行节点绑定，然后添加到订阅者里面
+        console.log(this.data, this, 'this.data, this'); //这个时候this里面还没有生成对应data的set get方法
+        observe(this.data, this)   //这个时候text属性生成 get set 方法生成
+        var id = options.el;
+        console.log(id, document.getElementById(id), this, 'Vue');
+        var dom = nodeToFragment(document.getElementById(id), this)  //这里开始使用
+        return;
+        //处理完所有节点后，重新把内容添加回去
+        document.getElementById(id).appendChild(dom)
+    }
+
+    // 在向碎片化文档中添加节点时，每个节点都处理一下
+    function nodeToFragment(node, vm) {
+        console.log(node, vm, 'nodeToFragment参数');
+        var fragment = document.createDocumentFragment();
+        var child;
+        console.log(fragment, child, node, node.firstChild, 'nodeToFragment');
+        while (child = node.firstChild) {
+            compile(child, vm);
+            // return;
+            console.log(fragment, child, node, node.firstChild, 'appendChild前');
+            fragment.appendChild(child);
+            console.log(fragment, child, node, node.firstChild, 'appendChild后'); //当appendChild后node.firstChil可以就为null while结束
+        }
+        return fragment
+    }
+
+    //编译函数
+    function compile(node, vm) {
+        console.log(node, vm, node.nodeType, 'compile');
+        var reg = /\{\{(.*)\}\}/; // 来匹配{{xxx}}中的xxx
+        //如果是元素节点
+        if (node.nodeType === 1) {
+            var attr = node.attributes;
+            //解析元素节点的所有属性
+            for (let i = 0; i < attr.length; i++) {
+                if (attr[i].nodeName == 'v-model') {
+                    var name = attr[i].nodeValue //看看是与哪一个数据相关
+                    node.addEventListener('input', function (e) { //将与其相关的数据改为最新值
+                        vm[name] = e.target.value
+                    })
+                    node.value = vm.data[name]; //将data中的值赋予给该node
+                    node.removeAttribute('v-model')
+                }
+            }
+        }
+        //如果是文本节点
+        if (node.nodeType === 3) {
+            if (reg.test(node.nodeValue)) {
+                var name = RegExp.$1; //获取到匹配的字符串
+                name = name.trim();  //trim函数去掉首位空白字符或预留字符
+                node.nodeValue = vm[name]; //将data中的值赋予给该node
+                console.log(vm, node, name, '绑定一个节点订阅者');
+                new Watcher(vm, node, name) //绑定一个订阅者
+            }
+        }
+    }
+
+    //实现一个观察者，对于一个实例 每一个属性值都进行观察。
+    function observe(obj, vm) {
+        for (let key of Object.keys(obj)) {
+            defineReactive(vm, key, obj[key]);
+        }
+    }
+    //实现一个响应式监听属性的函数。一旦有赋新值就发生变化 
+    function defineReactive(obj, key, val) { //这个时候以key做属性名生成get set方法
+        var dep = new Dep(); //观察者实例
+        Object.defineProperty(obj, key, {
+            get: function () {
+                if (Dep.target) { //每一个观察着都是唯一的  这个判断待研究
+                    console.log(Dep, Dep.target, 'Dep.target');
+                    dep.addSub(Dep.target)
+                }
+                return val
+            },
+            set: function (newVal) {
+                if (newVal === val) {
+                    return
+                }
+                val = newVal;
+                console.log('新值' + val, obj);
+                //一旦更新立马通知
+                dep.notify();
+            }
+        })
+    }
+
+    // Watcher监听者
+    function Watcher(vm, node, name) {
+        Dep.target = this;
+        this.vm = vm;
+        this.node = node;
+        this.name = name;
+        this.update();
+        Dep.target = null;
+    }
+
+    Watcher.prototype = {
+        update() { //视图修改
+            // this.get();
+            // this.node.nodeValue = this.value //更改节点内容的关键
+
+            this.node.nodeValue = this.vm[this.name] //更改节点内容的关键
+        },
+        get() {
+            this.value = this.vm[this.name] //触发相应的get ，貌似只有赋值的作用
+        }
+    }
+
+    //dep构造函数 订阅者
+    function Dep() {
+        this.subs = [] // 观察主题添加订阅者
+    }
+    Dep.prototype = {
+        // 添加订阅者
+        addSub(sub) {
+            console.log(sub, 'sub');
+            this.subs.push(sub)
+        },
+        // 发布通知
+        notify() {
+            this.subs.forEach(function (sub) {
+                sub.update();  // 去修改视图
+            })
+        }
+    }
+
+    var vm = new Vue({
+        el: 'app',
+        data: {
+            text: '小李'
+        }
+    })
+</script>
+
+</html>

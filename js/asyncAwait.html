@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let sum = 0;
+
+    //1.当没有await语句执行async函数，它就会立即执行，返回一个Promise对象，非阻塞，与普通的Promise对象函数一致
+    // ☆☆☆☆☆  async函数继承了promise的then...  这些链方法
+    /**
+    2.await等待的是一个Promise对象，或者是其他值（也就是说可以等待任何值），
+    ☆☆☆☆☆
+    如果等待的是Promise对象，则返回Promise的处理结果 ----------- 这里就可以可以把异步写在promise里 例如定时器里面写返回结果就回等待定时器执行
+    ☆☆☆☆☆
+    如果是其他值，则返回该值本身。
+    并且await会暂停当前async function的执行，等待Promise的处理完成。若Promise正常处理（fulfillded），
+    其将回调的resolve函数参数作为await表达式的值，继续执行async function；若Promise处理异常（rejected），
+    await表达式会把Promise异常原因抛出；另外如果await操作符后面的表达式不是一个Promise对象，则返回该值本身。
+    */
+
+    async function fun() {
+        await setTimeout(() => {
+            console.log(++sum, '自增后');
+            return;
+        }, 1000)
+        console.log("执行问题");
+    }
+
+    // fun()  执行后 先执行33行 再执行30行  因为 await等待的不是promise对象 所以没有等到promise返回结果就会执行定时器 执行方式和普通无意
+
+    async function funTwo() {
+        setTimeout(() => {
+            console.log(++sum, '自增后');
+        }, 1000)
+        console.log(this);
+    }
+    console.log(funTwo());
+    let obj = funTwo()
+    console.log(obj);
+    async function funThree() {
+        await obj.Prototype.resolve()
+        console.log("执行问题");
+    }
+
+    funThree()  //有问题
+
+
+
+    function setData() {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(++sum, '自增后');
+                resolve()
+            }, 1000)
+        })
+
+    }
+    async function getData() {
+        await setData();
+        console.log("执行问题");
+    }
+    // getData();   //await 等待执行
+
+
+    async function setDataTwo() {
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(++sum, '自增后');
+                resolve()
+            }, 1000)
+        })
+        console.log("执行问题");
+    }
+    setDataTwo();  //await 等待执行
+
+
+
+</script>
+
+</html>

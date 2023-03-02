@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let arr = [1, 2, 3, 4, 5, 6, 7]
+    Array.prototype.Self = fun
+    function fun(log) {
+        for (let i = 0; i < this.length; i++) {
+            log(i, this[i], this)
+        }
+    }
+
+    function log(i, item, arr) {
+        console.log(i, item);
+    }
+
+    arr.Self(log); //方法未重写  log函数控制打印处理
+
+
+    // 这里匿名函数相当于log()
+    // Self是一个函数 运行中然后箭头函数就是传进去的匿名函数 是Self执行时
+    // 匿名函数执行打印操作
+    // arr.Self((i, index, arr) => {
+    //     console.log(i, index, arr);
+    // })
+</script>
+
+</html>
