@@ -12,7 +12,7 @@
 
 </body>
 
-<script>
+<!-- <script>
     //发布者  里面通知全部的订阅者
     class Dep {
         constructor() {
@@ -77,12 +77,14 @@
     // obj.Prototype.__proto__('aaa');
     obj.age = 19;
     // console.log(obj);
-</script>
+</script> -->
 
 <!-- 自己写 查找订阅者不一样 应该没什么影响 -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 
-    // 1.创建一个发布者的calss
+
+
+    // 1.创建一个发布者的calss   中间人
     class Dep {
         constructor() {
             // 管理所有的订阅者
@@ -95,46 +97,52 @@
             console.log(`把订阅者${data}添加到${this.subs}里面集中`);
         }
     }
-    // 创建订阅者
+    // 创建订阅者   每个技能职位
     class Watcher {
         constructor(key) {
             this.data = key
         }
-        // 创建更新视图的方法
-        upView(key) {
+        // 创建更新视图的方法  修改职位
+        upView(key) {     
             console.log(`去更新${key}视图`);
         }
+        zuofan(){
+
+        }
     }
-    let obj = {
-        name: "123",
-        age: 18
-    }
+
     let dep = new Dep()
+
+    let obj = {
+        xiaoli: "前端",
+        xiaoming:"后端"
+    }
     Object.keys(obj).forEach(key => {
         let value = obj[key]
         Object.defineProperty(obj, key, {
-            // 修改值
+            // 修改值    找到对应人去修改职位
             set(newVal) {
                 console.log(newVal, dep.subs);
                 if (value == newVal) return newVal;
                 // 寻找对比订阅者执行改变视图的发法
+                console.log(dep.subs)
                 dep.subs.forEach(keys => {
                     if (key === keys.data) keys.upView(key)
                 })
                 value = newVal;
             },
-            // 获取的时候添加订阅者
+            // 获取的时候添加订阅者  调查人的信息填表
             get() {
-                console.log(value);
-                const watcher = new Watcher(key)
+                const watcher = new Watcher(key) 
                 dep.pushSubs(watcher)
                 return value
             }
         })
     })
-    obj.name
-    obj.name = "14"
-
-</script> -->
+    obj.xiaoli
+   
+    console.log(obj)
+    obj.xiaoli = "14" // 与  dep.subs [{data:xiaoli},{}] 对比找到对应的人的技能调用
+</script>
 
 </html>

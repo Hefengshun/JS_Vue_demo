@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>Document</title>
+    <style>
+        #app {
+            width: 786px;
+        }
+
+        tr {
+            width: 100px;
+            height: 50px;
+        }
+
+        td {
+            width: 145px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <fieldset>
+            <legend>商品列表</legend>
+            名称:
+            <input type="text" v-model="fruit.name">
+            数量:
+            <input type="text" v-model="fruit.num">
+            是否上架:
+            <select v-model="Yes">
+                <option :value="true">上架</option>
+                <option :value="false">下架</option>
+            </select>
+            <button @click="add">新增商品</button>
+            <table border="1">
+                <tr>
+                    <td :style="{fontWeight:fw}">编号</td>
+                    <td :style="{fontWeight:fw}">名称</td>
+                    <td :style="{fontWeight:fw}">状态</td>
+                    <td :style="{fontWeight:fw}">数量</td>
+                    <td :style="{fontWeight:fw}">操作</td>
+                </tr>
+                <tr v-for="(item,index) in arr" :key="item.id">
+                    <td>{{item.bh}}</td>
+                    <td>{{item.name}}</td>
+                    <td>
+                        <span v-if="item.status">上架状态</span>
+                        <span v-else>下架状态</span>
+                    </td>
+                    <td>
+                        <button @click="item.num++">+</button>{{item.num}}
+                        <button @click="item.num<=0?0:item.num--">-</button>
+                    </td>
+                    <td>
+                        <button @click="del(index)">删除</button>
+                        <button v-if="item.status" @click="item.status=!item.status">点击下架</button>
+                        <button v-else @click="item.status=!item.status">点击上架</button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
+    <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fw: 700,
+                bh: 6,
+                id: 5,
+                num: 0,
+
+
+                arr: [
+                    { id: 0, bh: 1, name: "苹果", status: "true", num: 5 },
+                    { id: 1, bh: 2, name: "香蕉", status: "false", num: 5, },
+                    { id: 2, bh: 3, name: "橘子", status: "true", num: 5, },
+                    { id: 3, bh: 4, name: "甘蔗", status: "true", num: 5, },
+                    { id: 4, bh: 5, name: "荔枝", status: "true", num: 5, }
+                ],
+                Yes: true,
+                fruit: { name: "", num: "", }
+            },
+            methods: {
+                add() {
+                    if (this.fruit.name == "") {
+                        alert("输入框不能为空")
+                        return;
+                    }
+                    this.arr.push({
+                        bh: this.bh++,
+                        id: this.id++,
+                        name: this.fruit.name,
+                        num: this.fruit.num,
+                        status: this.Yes
+                    })
+                },
+                del(i) {
+                    console.log(i);
+                    this.arr.splice(i, 1)
+                }
+            },
+            computed: {
+            }
+        });
+    </script>
+</body>
+
+</html>

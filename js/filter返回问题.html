@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [{ name: "111", index: '1' }, { name: "111", index: '1' }, { name: "111", index: '1' }, { name: "111", index: '1' }, { name: "111", index: '1' }, { name: "111", index: '1' },]
+        // let _arr = arr.filter(item => {
+        //     return item.name                //错误写法  [{ name: "111", index: '1' }, { name: "111", index: '1' }...... 返回的数组结构与原数组结构一致，可以说返回的数组是基于原数组的
+        // })
+        // let _arr = arr.filter(item => {
+        //     return item.index               //错误写法  [{ name: "111", index: '1' }, { name: "111", index: '1' }......  返回的数组结构与原数组结构一致，可以说返回的数组是基于原数组的
+        // })
+        let _arr = arr.map(item => {
+            return item.index                  //可以返回 ['1', '1', '1', '1', '1', '1']
+        })
+
+        // 1.filter与map的区别？ ( map将返回值组装成一个数组 )  //filter返回的也是一个数组，但是返回的数组结构与原数组结构一致，可以说返回的数组是基于原数组的
+        // 2.fitter返回形式？                                 //filter返回的也是一个数组，但是返回的数组结构与原数组结构一致，可以说返回的数组是基于原数组的
+        console.log(_arr); 
+    </script>
+</body>
+
+</html>

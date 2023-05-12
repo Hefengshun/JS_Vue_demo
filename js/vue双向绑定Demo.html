@@ -20,7 +20,7 @@
         this.data = options.data;
         // 让观察者对data数据进行节点绑定，然后添加到订阅者里面
         console.log(this.data, this, 'this.data, this'); //这个时候this里面还没有生成对应data的set get方法
-        observe(this.data, this)   //这个时候text属性生成 get set 方法生成
+        observe(this.data, this)   //这个时候text属性处理 get set 方法生成
         var id = options.el;
         console.log(id, document.getElementById(id), this, 'Vue');
         var dom = nodeToFragment(document.getElementById(id), this)  //这里开始使用

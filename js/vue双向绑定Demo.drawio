@@ -1,0 +1,173 @@
+<mxfile host="65bd71144e">
+    <diagram id="1VQSa8ItvnzOfFAe7IJk" name="第 1 页">
+        <mxGraphModel dx="1939" dy="1711" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.465;entryY=0.007;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#23445D;fontSize=12;" parent="1" source="CCwyIpG15DrNso7RaZ16-7" target="CCwyIpG15DrNso7RaZ16-9" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.548;entryY=0.052;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#23445D;fontSize=12;" parent="1" source="CCwyIpG15DrNso7RaZ16-7" target="CCwyIpG15DrNso7RaZ16-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-7" value="Watcher" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FFFFFF;fontColor=#FFFFFF;fillColor=#182E3E;" parent="1" vertex="1">
+                    <mxGeometry x="70" y="370" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;" parent="1" source="CCwyIpG15DrNso7RaZ16-8" target="CCwyIpG15DrNso7RaZ16-14" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-64" value="get&lt;br&gt;获取的时候调用" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-15" vertex="1" connectable="0">
+                    <mxGeometry x="-0.033" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;" parent="1" source="CCwyIpG15DrNso7RaZ16-8" target="CCwyIpG15DrNso7RaZ16-13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-63" value="set&lt;br&gt;修改属性的时候调用" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-16" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0717" y="1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-59" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;fontSize=12;" parent="1" source="CCwyIpG15DrNso7RaZ16-8" target="CCwyIpG15DrNso7RaZ16-58" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-62" value="result" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-59" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0547" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-8" value="Dep&lt;br&gt;this.subs集中式管理" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FFFFFF;fontColor=#FFFFFF;fillColor=#182E3E;" parent="1" vertex="1">
+                    <mxGeometry x="707" y="300" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-9" value="upDate()&lt;br&gt;更新视图的方法&lt;br&gt;给node节点赋值&lt;br&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="-140" y="485" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-77" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#23445D;fontSize=12;" parent="1" source="CCwyIpG15DrNso7RaZ16-11" target="CCwyIpG15DrNso7RaZ16-13" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="335" y="650"/>
+                            <mxPoint x="1020" y="650"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-79" value="赋值的时候就会调用修改后的set方法&amp;nbsp; 而set方法里有就Dep的notify方法&amp;nbsp;&lt;br&gt;&amp;nbsp;而notify方法在this.subs里面找对应的Watcher去操作视图发生变化" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-77" vertex="1" connectable="0">
+                    <mxGeometry x="-0.0357" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-11" value="get() 获取&lt;br&gt;获取的时候给属性赋值" style="rhombus;whiteSpace=wrap;html=1;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="270" y="485" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-13" value="notify()&lt;br&gt;发布通知" style="rhombus;whiteSpace=wrap;html=1;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="960" y="480" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-14" value="addSub()&lt;br&gt;添加订阅者" style="rhombus;whiteSpace=wrap;html=1;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="480" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;" parent="1" source="CCwyIpG15DrNso7RaZ16-18" target="CCwyIpG15DrNso7RaZ16-22" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-18" value="Vue&lt;br&gt;Class&lt;br&gt;接收#id，与Object" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FFFFFF;fontColor=#FFFFFF;fillColor=#182E3E;" parent="1" vertex="1">
+                    <mxGeometry x="705" y="-330" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;" parent="1" source="CCwyIpG15DrNso7RaZ16-22" target="CCwyIpG15DrNso7RaZ16-31" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-65" value="2.拆解引用属性" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-32" vertex="1" connectable="0">
+                    <mxGeometry x="0.2137" relative="1" as="geometry">
+                        <mxPoint x="17" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;" parent="1" source="CCwyIpG15DrNso7RaZ16-22" target="CCwyIpG15DrNso7RaZ16-28" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-55" value="1.修改原有的属性的get set方法添加新的需求" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-38" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1155" relative="1" as="geometry">
+                        <mxPoint x="58" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-22" value="通过方法实现&lt;br&gt;属性添加观察者&lt;br&gt;与dom元素的拆解" style="rhombus;whiteSpace=wrap;html=1;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="690" y="-200" width="150" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;" parent="1" source="CCwyIpG15DrNso7RaZ16-28" target="CCwyIpG15DrNso7RaZ16-8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-28" value="observe&lt;br&gt;(this.data,this)&lt;br&gt;修改get set方法&lt;br&gt;功能" style="rhombus;whiteSpace=wrap;html=1;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="702" y="60" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;" parent="1" source="CCwyIpG15DrNso7RaZ16-31" target="CCwyIpG15DrNso7RaZ16-34" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-66" value="传入#id与this(Vue)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-35" vertex="1" connectable="0">
+                    <mxGeometry x="0.1024" y="-1" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-31" value="通过&lt;br&gt;nodeToFragment()&lt;br&gt;进行拆解" style="rhombus;whiteSpace=wrap;html=1;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="390" y="-190" width="130" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#23445D;fontSize=12;" parent="1" source="CCwyIpG15DrNso7RaZ16-34" target="CCwyIpG15DrNso7RaZ16-70" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-72" value="v-mode节点" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-71" vertex="1" connectable="0">
+                    <mxGeometry x="0.072" relative="1" as="geometry">
+                        <mxPoint x="7" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#23445D;fontSize=12;" parent="1" source="CCwyIpG15DrNso7RaZ16-34" target="CCwyIpG15DrNso7RaZ16-73" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-75" value="文本使用节点" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-74" vertex="1" connectable="0">
+                    <mxGeometry x="0.0997" y="2" relative="1" as="geometry">
+                        <mxPoint x="-12" y="2" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-34" value="&lt;font style=&quot;font-size: 12px;&quot;&gt;compile()&lt;br&gt;重新编译模板，&lt;br&gt;把使用到的属性以及&lt;br&gt;使用属性node节点&lt;br&gt;(vm,node,name)&lt;br&gt;传进去生成Watcher&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#182E3E;strokeColor=#FFFFFF;fontColor=#FFFFFF;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="-20" y="-225" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-52" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;strokeColor=#23445D;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="CCwyIpG15DrNso7RaZ16-9" target="CCwyIpG15DrNso7RaZ16-11" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="320" y="530" as="sourcePoint"/>
+                        <mxPoint x="420" y="430" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-53" value="相互引用" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-52" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1678" y="2" relative="1" as="geometry">
+                        <mxPoint x="20" y="2" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-58" value="每个属性的get方法里都有Dep Class" style="rounded=1;whiteSpace=wrap;html=1;strokeColor=#FFFFFF;fontColor=#FFFFFF;fillColor=#182E3E;" parent="1" vertex="1">
+                    <mxGeometry x="707" y="525" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-70" value="解析value&lt;br&gt;时刻对vm中data赋值" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=#FFFFFF;fontSize=12;fontColor=#FFFFFF;fillColor=#182E3E;" parent="1" vertex="1">
+                    <mxGeometry x="-130" y="100" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#23445D;fontSize=12;" parent="1" source="CCwyIpG15DrNso7RaZ16-73" target="CCwyIpG15DrNso7RaZ16-7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-80" value="赋值首先获取使用到 get &lt;br&gt;而Watch在此之前就把当前的Class赋值给了 Dep.target &lt;br&gt;然后调用Dep的addSub方法进行添加集中管理，&lt;br&gt;这个时候Dep中的this.subs的每一项都有&lt;br&gt;Vue,node,键值" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-76" vertex="1" connectable="0">
+                    <mxGeometry x="0.1087" relative="1" as="geometry">
+                        <mxPoint x="47" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-73" value="(vm,node,name)&lt;br&gt;vue,节点,键值&lt;br&gt;生成Watch" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;strokeColor=#FFFFFF;fontSize=12;fontColor=#FFFFFF;fillColor=#182E3E;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="100" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-81" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;strokeColor=#23445D;fontSize=12;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="CCwyIpG15DrNso7RaZ16-70" target="CCwyIpG15DrNso7RaZ16-73" edge="1">
+                    <mxGeometry width="100" height="100" relative="1" as="geometry">
+                        <mxPoint x="10" y="139.70999999999998" as="sourcePoint"/>
+                        <mxPoint x="155" y="139.70999999999998" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="CCwyIpG15DrNso7RaZ16-82" value="相互引用" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontColor=#FFFFFF;" parent="CCwyIpG15DrNso7RaZ16-81" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1678" y="2" relative="1" as="geometry">
+                        <mxPoint x="20" y="2" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
